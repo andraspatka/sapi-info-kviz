@@ -30,7 +30,7 @@ const renderQuestion = (question) => {
             ))}
             {explanation && (
                 <div className='explanation'>
-                    <h3>Explanation:</h3>
+                    <h3>Magyarázat:</h3>
                     <p>{renderMarkup(explanation)}</p>
                 </div>
             )}

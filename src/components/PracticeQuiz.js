@@ -256,36 +256,27 @@ export default class Quiz extends React.Component {
                     {answer !== null && !complete &&
                     <div className='messageDiv'>
                         {answer
-                            ? <h1 className='correctAnswer'>Correct, great work!</h1>
-                            : <h1 className='wrongAnswer'>Sorry, that is not correct!</h1>}
+                            ? <h1 className='correctAnswer'>Helyes válasz!</h1>
+                            : <h1 className='wrongAnswer'>Helytelen válasz!</h1>}
                         {answer !== null && !answer && explanation && (
                             <div className='explanation'>
-                                <h3>Explanation:</h3>
+                                <h3>Magyarázat:</h3>
                                 <p>{this.renderMarkup(explanation)}</p>
                             </div>
                         )}
                         {index + 1 === numberOfQuestions
-                            ? <button onClick={this.nextQuestion}>View Results</button>
-                            : <button onClick={this.nextQuestion}>Next Question</button>}
+                            ? <button onClick={this.nextQuestion}>Eredmények megtekintése</button>
+                            : <button onClick={this.nextQuestion}>Következő kérdés</button>}
                     </div>}
 
                     {complete &&
                     <div>
                         <h1 className='scoreMessage'>
-                            You scored {score} correct out
-                            of {numberOfQuestions} questions! {percentage > 0.75 ? 'Nice work!' : 'Better luck next time!'}
+                            {numberOfQuestions} kérdésből {score} kérdésre választoltál helyesen! {percentage > 0.75 ? 'Szép munka!' : 'Ezen még kell dolgozni!'}
                         </h1>
                         <Link className='finishBtn' to='/' onClick={() => this.props.finishQuiz()}>
-                            <button>Return to Quiz Page</button>
+                            <button>Vissza a főoldalra</button>
                         </Link>
-                        <button className='fbShare'>
-                            <a
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                href="https://www.facebook.com/sharer/sharer.php?u=http://fcc-quiz.surge.sh/">
-                                Share on Facebook
-                            </a>
-                        </button>
                     </div>}
 
                     {!isMobile && <div id='infoBox'>

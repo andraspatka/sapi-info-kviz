@@ -3,13 +3,10 @@
  * guide for directions for adding new questions or modifying
  * the content of these challenges.
  */
-
-import week_1 from './01';
-import week_2 from './02';
+import pszeudokod from './pszeudokod';
 
 const challenges = [
-    week_1,
-    week_2,
+    pszeudokod
 ];
 
 /* This doesn't cover everything but serves as a basic verification that

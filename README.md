@@ -1,4 +1,4 @@
-# Szapientia Informatika felvételire felkészítő kvíz alkalmazás
+# Sapientia Informatika felvételire felkészítő kvíz alkalmazás
 
 ---
 
