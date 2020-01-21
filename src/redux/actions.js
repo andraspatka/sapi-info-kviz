@@ -1,4 +1,3 @@
-
 /* Action Types: */
 
 export const START_ALL = 'START_ALL';
@@ -12,21 +11,21 @@ export const FINISH_QUIZ = 'FINISH_QUIZ';
 
 /* Action Creators: */
 
-export const startAllQuestionQuiz = () => ({ type: START_ALL });
+export const startAllQuestionQuiz = () => ({type: START_ALL});
 
 export const startQuiz = (title) => ({
-  type: START_QUIZ,
-  payload: title,
+    type: START_QUIZ,
+    payload: title,
 });
 
 export const startQuizByQuestion = (title, question) => ({
-  type: START_QUIZ_BY_QUESTION,
-  payload: {
-    title, question
-  }
+    type: START_QUIZ_BY_QUESTION,
+    payload: {
+        title, question
+    }
 });
 
-export const correct = () => ({ type: SCORE });
-export const nextQuestion = () => ({ type: NEXT_QUESTION });
-export const viewResults = () => ({ type: RESULTS });
-export const finishQuiz = () => ({ type: FINISH_QUIZ });
+export const correct = () => ({type: SCORE});
+export const nextQuestion = () => ({type: NEXT_QUESTION});
+export const viewResults = () => ({type: RESULTS});
+export const finishQuiz = () => ({type: FINISH_QUIZ});
