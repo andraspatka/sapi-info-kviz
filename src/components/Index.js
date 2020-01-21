@@ -8,14 +8,7 @@ import { mapScreenSizeToProps } from '../utils/helpers';
 /* Header Component */
 const renderHeader = (isDesktop) => (
 	<div className='header'>
-		<span>App Time!📲 Lessons</span>
-			{isDesktop && <a
-				target="_blank"
-				rel="noopener noreferrer"
-				className="contributeLink"
-				href="https://github.com/bonham000/app-time-lessons">
-				View Source <i className='fa fa-github'></i>
-		</a>}
+		<span>Sapientia informatika felkészítő kvíz!</span>
 	</div>
 );
 
@@ -33,7 +26,7 @@ class extends React.Component {
 			maxOptions: this.props.quizzes.size + 1,
 			selection: null,
 			answer: null,
-		}
+		};
 		document.addEventListener('keydown', this.handleKeyDown);
 	}
 	componentDidMount() {
@@ -101,7 +94,7 @@ class extends React.Component {
 		default:
 			return;
 		}
-	}
+	};
 	render() {
 		const { maxOptions, selection } = this.state;
 		const { screen, quizzes } = this.props;
@@ -130,7 +123,7 @@ class extends React.Component {
 							{/* We could limit the review link to development with this:
 							 * process.env.NODE_ENV === 'development' */}
 							<Link className='review' to={`/review/${title}`} title='Review All Questions'>
-								<i className='fa fa-search'></i>
+								<i className='fa fa-search'/>
 							</Link>
 							<Link to={`/practice/${title}`} className={renderClassName(index)} onMouseEnter={this.onHover}>
 								{quiz.get("title")} <span>({challenges.size} questions)</span>

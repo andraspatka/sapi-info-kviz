@@ -7,9 +7,9 @@ import { findQuiz, mapScreenSizeToProps } from '../utils/helpers';
 
 const renderMarkup = (html) => {
   return (
-    <span dangerouslySetInnerHTML={{__html: html}}></span>
+    <span dangerouslySetInnerHTML={{__html: html}}/>
   );
-}
+};
 
 const renderQuestion = (question) => {
   const solution = +question.get('solution');
@@ -52,7 +52,7 @@ class Review extends React.Component {
   }
   handleKeyDown = ({ code }) => {
 		if (code === 'Escape') this.props.history.push('/');
-	}
+	};
   render() {
     const { quiz, screen } = this.props;
     if (!quiz) return null;
@@ -70,7 +70,7 @@ class Review extends React.Component {
             </h3>
             {screen.isDesktop && <span id="return">
               <Link to='/'>
-                <i className="fa fa-times-circle" aria-hidden="true"></i>
+                <i className="fa fa-times-circle" aria-hidden="true"/>
               </Link>
             </span>}
           </div>
