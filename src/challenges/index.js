@@ -3,10 +3,14 @@
  * guide for directions for adding new questions or modifying
  * the content of these challenges.
  */
-import pszeudokod from './pszeudokod';
+import feltetel from './feltetel';
+import ciklusok from './ciklusok';
+import tombok2d from './2dtombok';
 
 const challenges = [
-    pszeudokod
+    feltetel,
+    ciklusok,
+    tombok2d
 ];
 
 /* This doesn't cover everything but serves as a basic verification that

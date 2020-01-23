@@ -6,16 +6,22 @@ const end = `</code></pre>`;
  * Create Code Snippets
  *********************************** */
 
-const PSZEUDOKOD_1 = {
+const PSZEUDOKOD = {
     snippet: `
     ${start}
-        n = 18245
-        p = 1
-        amíg n != 0 végezd
-            m = n % 10
-            n = n / 10
-            p = p * m
-        kiír p
+        k = 1
+        minden j = 1,2,1 végezd
+            a[1][j] = k
+            k = k + 1
+        minden i = 1,2,1 végezd
+            a[i][3] = k
+            k = k + 1
+        minden j = 3,2,-1 végezd
+            a[3][j] = k
+            k = k + 1
+        minden i = 3,2,-1 végezd
+            a[i][1] = k
+            k = k + 1
     ${end}`
 };
 
@@ -24,11 +30,12 @@ const PSZEUDOKOD_1 = {
  *********************************** */
 
 export default {
-    title: "Pszeudokódos feladatok",
+    title: "Ciklusok",
     category: "Pszeudokód",
     challenges: [
         {
-            title: `Mit ír ki az alábbi pszeudokód algoritmus? ${PSZEUDOKOD_1.snippet}`,
+            title: `Mi lesz az a[1..3][1..3] kétdimenziós tömb tartalma az alábbi pszeudokód algoritmusrészlet nyomán,
+                    ha előzőleg minden eleme 0-t tárolt? ${PSZEUDOKOD.snippet}`,
             subtitle: `Ciklusok1`,
             choices: [
                 "320",
@@ -49,7 +56,7 @@ export default {
 				`
         },
         {
-            title: `Az alábbi <em>n</em> értékek közül melyikre ír ki az algoritmus <em>280</em>-at? ${PSZEUDOKOD_1.snippet}`,
+            title: `Az alábbi <em>n</em> értékek közül melyikre ír ki az algoritmus <em>280</em>-at? ${PSZEUDOKOD.snippet}`,
             subtitle: `Ciklusok2`,
             choices: [
                 "857",
@@ -67,6 +74,6 @@ export default {
 				<p>Ötödik ciklus: <code> n = 0 -> (n != 0) kritériumnak nem felel meg, ciklus vége </code></p>
 				
 				`
-        }
+        },
     ]
 };
