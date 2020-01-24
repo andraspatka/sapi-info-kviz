@@ -66,8 +66,7 @@ class Review extends React.Component {
                 <div className='studyContainer'>
                     <div className='quizHeader'>
                         <div className='quizTitle'>
-                            <span>{quiz.get('title')} Overview</span>
-                            <span style={{marginLeft: 10}}>🧙‍♂️</span>
+                            <span>{quiz.get('title')} : Áttekintés</span>
                         </div>
                         <h3 className='quizMeta'>
                             {challenges.size > 1 ? `${challenges.size} total questions` : ''}

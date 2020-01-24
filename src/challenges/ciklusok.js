@@ -19,6 +19,17 @@ const PSZEUDOKOD = {
     ${end}`
 };
 
+const PSZEUDOKOD2 = {
+    snippet: `
+    ${start}
+        n = 100
+        k = 1
+        minden i = 1, n, -1 végezd
+            k = k + 1
+        kiír k
+    ${end}`
+};
+
 /***********************************
  * Export Challenge Array
  *********************************** */
@@ -66,6 +77,22 @@ export default {
 				<p>Negyedik iteráció: <code> n = 0 m = 8 p = 280 </code></p>
 				<p>Ötödik iteráció: <code> n = 0 -> (n != 0) kritériumnak nem felel meg, ciklus vége </code></p>
 				
+				`
+        },
+        {
+            title: `Mit ír ki az alábbi pszeudokód algoritmus? ${PSZEUDOKOD2.snippet}`,
+            subtitle: `InfCiklus`,
+            choices: [
+                "A kiírásig soha se fog eljutni a program",
+                "101",
+                "0",
+                "1",
+                "-99",
+            ],
+            solution: `0`,
+            explanation: `
+				A ciklusnál az <strong>i</strong> kezdőértéke <strong>1</strong>, és a ciklus végrehajtása akkor fog megállni, ha az <strong>i</strong>-nek
+				az értéke <strong>n</strong>-nél nagyobb lesz. Mivel az <strong>i</strong>-t minden iterációban csökkentjük, ezért soha nem lesz nagyobb az <strong>n</strong>-nél.
 				`
         },
     ]

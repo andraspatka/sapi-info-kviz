@@ -138,12 +138,12 @@ export default connectScreenSize(
                         <div className='quizContainer'>
                             <Link to='practice/shuffle' className={renderClassName(maxOptions - 1)}
                                   onMouseEnter={this.onHover}>
-                                Shuffle All Quizzes <span>({totalQuestions} questions)</span>
+                                Összes kérdésből előállított teszt <span>({totalQuestions} questions)</span>
                             </Link>
                         </div>
                         <div className='quizContainer'>
                             <Link to="/about" className={renderClassName(maxOptions)} onMouseEnter={this.onHover}>
-                                Additional Information
+                                ...
                             </Link>
                         </div>
                     </div>

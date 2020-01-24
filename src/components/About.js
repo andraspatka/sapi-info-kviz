@@ -25,7 +25,7 @@ export default connectScreenSize(mapScreenSizeToProps)(
                     <div className='studyContainer'>
                         <div className='quizHeader'>
                             <div className='quizTitle'>
-                                <span>About</span>
+                                <span>Rólunk</span>
                             </div>
                             {!screen.isMobile && <span id="return">
               <Link to='/'>
@@ -35,7 +35,6 @@ export default connectScreenSize(mapScreenSizeToProps)(
                         </div>
                         <div className='about'>
                             <h1>Sapientia informatika felkészítő kvíz!️</h1>
-                            <p>TODO: Szöveg</p>
                             <Link className='finishBtn' to='/'>
                                 <button>Vissza</button>
                             </Link>

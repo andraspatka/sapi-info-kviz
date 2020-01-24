@@ -9,19 +9,22 @@ const end = `</code></pre>`;
 const PSZEUDOKOD = {
     snippet: `
     ${start}
-        k = 1
-        minden j = 1,2,1 végezd
-            a[1][j] = k
-            k = k + 1
-        minden i = 1,2,1 végezd
-            a[i][3] = k
-            k = k + 1
-        minden j = 3,2,-1 végezd
-            a[3][j] = k
-            k = k + 1
-        minden i = 3,2,-1 végezd
-            a[i][1] = k
-            k = k + 1
+        a = [3, 2, 1, 5, 4]
+        b = [0, 0, 0, 0, 0]
+        minden i = 1,5,1 végezd
+            b[a[i]] = b[a[i]] + 1
+    ${end}`
+};
+
+const PSZEUDOKOD2 = {
+    snippet: `
+    ${start}
+        a = [3, 2, 1, 5, 4]
+        b = [0, 0, 0, 0, 0]
+        minden i = 1,5,1 végezd
+            b[a[i]] = b[a[i]] + 1
+        minden i = 1,5,-1 végezd
+            a[b[i]] = a[b[i]] - 1
     ${end}`
 };
 
@@ -30,49 +33,66 @@ const PSZEUDOKOD = {
  *********************************** */
 
 export default {
-    title: "Ciklusok",
+    title: "Egydimenziós tömbök",
     category: "Pszeudokód",
     challenges: [
         {
-            title: `Mi lesz az a[1..3][1..3] kétdimenziós tömb tartalma az alábbi pszeudokód algoritmusrészlet nyomán,
-                    ha előzőleg minden eleme 0-t tárolt? ${PSZEUDOKOD.snippet}`,
-            subtitle: `Ciklusok1`,
+            title: `Mi lesz az <strong>a[1..5]</strong> és <strong>b[1..5]</strong> öt elemű tömbök tartalma? ${PSZEUDOKOD.snippet}`,
+            subtitle: `Tomb1`,
             choices: [
-                "320",
-                "3200",
-                "10000",
-                "8",
+                `<p>b: [1, 1, 1, 1, 1]</p>
+                 <p>a: [3, 2, 1, 5, 4]</p>`,
+                `<p>b: [1, 1, 1, 1, 1]</p>
+                 <p>a: [4, 2, 1, 5, 3]</p>`,
+                `<p>b: [2, 3, 4, 5, 6]</p>
+                 <p>a: [3, 2, 1, 5, 4]</p>`,
+                `<p>b: [0, 0, 0, 0, 0]</p>
+                 <p>a: [3, 2, 1, 5, 4]</p>`,
             ],
             solution: `0`,
             explanation: `
-				Ciklusok lebontása
-				<p>Első ciklus: <code> n = 18245 m = 5 p = 5 </code><p>
-				<p>Második ciklus: <code> n = 1824 m = 4 p = 20 </code></p>
-				<p>Harmadik ciklus: <code> n = 182 m = 2 p = 40 </code></p>
-				<p>Negyedik ciklus: <code> n = 18 m = 8 p = 320 </code></p>
-				<p>Ötödik ciklus: <code> n = 1 m = 1 p = 320 </code></p>
-				<p>Hatodik ciklus: <code> n = 0 -> (n != 0) kritériumnak nem felel meg, ciklus vége </code></p>
-				
+				Iterációk lebontása:<br/>
+				Első ciklus:
+				<ol>
+				    <li><code class='language-javascript'>b[3] = b[3] + 1; i = 1</code></li>
+				    <li><code class='language-javascript'>b[2] = b[2] + 1; i = 2</code></li>
+				    <li><code class='language-javascript'>b[1] = b[1] + 1; i = 3</code></li>
+				    <li><code class='language-javascript'>b[5] = b[5] + 1; i = 4</code></li>
+				    <li><code class='language-javascript'>b[4] = b[4] + 1; i = 5</code></li>
+                </ol>
 				`
         },
         {
-            title: `Az alábbi <em>n</em> értékek közül melyikre ír ki az algoritmus <em>280</em>-at? ${PSZEUDOKOD.snippet}`,
-            subtitle: `Ciklusok2`,
+            title: `Mi lesz az <strong>a[1..5]</strong> és <strong>b[1..5]</strong> öt elemű tömbök tartalma? ${PSZEUDOKOD2.snippet}`,
+            subtitle: `Tomb2`,
             choices: [
-                "857",
-                "3200",
-                "10000",
-                "8",
+                `<p>b: [1, 1, 1, 1, 1]</p>
+                 <p>a: [-1, 2, 1, 5, 4]</p>`,
+                `<p>b: [1, 1, 1, 1, 1]</p>
+                 <p>a: [2, 1, 0, 4, 3]</p>`,
+                `<p>b: [2, 3, 4, 5, 6]</p>
+                 <p>a: [3, 2, 1, 5, 4]</p>`,
+                `<p>b: [0, 0, 0, 0, 0]</p>
+                 <p>a: [3, 2, 1, 5, 4]</p>`,
             ],
             solution: `0`,
             explanation: `
-				Ciklusok lebontása
-				<p>Első ciklus: <code> n = 857 m = 7 p = 7 </code><p>
-				<p>Második ciklus: <code> n = 85 m = 5 p = 35 </code></p>
-				<p>Harmadik ciklus: <code> n = 8 m = 8 p = 280 </code></p>
-				<p>Negyedik ciklus: <code> n = 0 m = 8 p = 280 </code></p>
-				<p>Ötödik ciklus: <code> n = 0 -> (n != 0) kritériumnak nem felel meg, ciklus vége </code></p>
-				
+				Iterációk lebontása:
+				<ol>
+				    <li><code class='language-javascript'>b[3] = b[3] + 1; i = 1</code></li>
+				    <li><code class='language-javascript'>b[2] = b[2] + 1; i = 2</code></li>
+				    <li><code class='language-javascript'>b[1] = b[1] + 1; i = 3</code></li>
+				    <li><code class='language-javascript'>b[5] = b[5] + 1; i = 4</code></li>
+				    <li><code class='language-javascript'>b[4] = b[4] + 1; i = 5</code></li>
+                </ol>
+                Második ciklus:
+				<ol>
+				    <li><code class='language-javascript'>a[1] = b[1] - 1; i = 5</code></li>
+				    <li><code class='language-javascript'>a[1] = a[1] - 1; i = 4</code></li>
+				    <li><code class='language-javascript'>a[1] = a[1] - 1; i = 3</code></li>
+				    <li><code class='language-javascript'>a[1] = a[1] - 1; i = 2</code></li>
+				    <li><code class='language-javascript'>a[1] = a[1] - 1; i = 1</code></li>
+                </ol>
 				`
         },
     ]
