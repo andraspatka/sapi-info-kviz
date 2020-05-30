@@ -182,11 +182,10 @@ export default class Quiz extends React.Component {
 
                     <div className='quizHeader'>
                         <div className='quizTitle'>
-                            <span>{quiz.get('title')} Quiz</span>
-                            <span style={{marginLeft: 10}}>📕</span>
+                            <span>{quiz.get('title')} kvíz</span>
                         </div>
                         {!this.state.complete
-                            ? <h3 className='quizMeta'>Question {index + 1} of {numberOfQuestions}</h3>
+                            ? <h3 className='quizMeta'>{index + 1} / {numberOfQuestions} Kérdés</h3>
                             : <h3 className='quizMeta'>Quiz Complete</h3>}
                         {isDesktop && <span id="return">
 									<Link to='/'>
@@ -280,7 +279,7 @@ export default class Quiz extends React.Component {
                     </div>}
 
                     {!isMobile && <div id='infoBox'>
-                        <p>Use <i className='fa fa-long-arrow-up'/> <i className='fa fa-long-arrow-down'/> space and esc
+                        <p>Navigációhoz <i className='fa fa-long-arrow-up'/> <i className='fa fa-long-arrow-down'/> space és esc
                         </p>
                     </div>}
 
