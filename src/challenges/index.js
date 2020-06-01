@@ -7,12 +7,14 @@ import feltetel from './feltetel';
 import ciklusok from './ciklusok';
 import tombok2d from './2dtombok';
 import tombok from './tombok';
+import fuggvenyek from './fuggvenyek';
 
 const challenges = [
     feltetel,
     ciklusok,
     tombok2d,
-    tombok
+    tombok,
+    fuggvenyek
 ];
 
 /* This doesn't cover everything but serves as a basic verification that

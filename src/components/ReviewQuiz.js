@@ -69,7 +69,7 @@ class Review extends React.Component {
                             <span>{quiz.get('title')} : Áttekintés</span>
                         </div>
                         <h3 className='quizMeta'>
-                            {challenges.size > 1 ? `${challenges.size} total questions` : ''}
+                            {challenges.size > 1 ? `összesen ${challenges.size} kérdés` : ''}
                         </h3>
                         {screen.isDesktop &&
                         <span id="return">
