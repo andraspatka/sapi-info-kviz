@@ -1,4 +1,4 @@
-# Sapientia Informatika felvételire felkészítő kvíz alkalmazás
+# Sapientia Informatika felvételire felkészítő kvíz alkalmazás ![Deploy](https://github.com/andraspatka/sapi-info-kviz/workflows/Deploy/badge.svg)
 
 ---
 

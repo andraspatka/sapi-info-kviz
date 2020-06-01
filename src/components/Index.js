@@ -130,7 +130,7 @@ export default connectScreenSize(
                                     </Link>
                                     <Link to={`/practice/${title}`} className={renderClassName(index)}
                                           onMouseEnter={this.onHover}>
-                                        {quiz.get("title")} <span>({challenges.size} questions)</span>
+                                        {quiz.get("title")} <span>({challenges.size} kérdés)</span>
                                     </Link>
                                 </div>
                             )
@@ -138,7 +138,7 @@ export default connectScreenSize(
                         <div className='quizContainer'>
                             <Link to='practice/shuffle' className={renderClassName(maxOptions - 1)}
                                   onMouseEnter={this.onHover}>
-                                Összes kérdésből előállított teszt <span>({totalQuestions} questions)</span>
+                                Összes kérdésből előállított teszt <span>({totalQuestions} kérdés)</span>
                             </Link>
                         </div>
                         <div className='quizContainer'>
