@@ -8,7 +8,7 @@ import {mapScreenSizeToProps} from '../utils/helpers';
 /* Header Component */
 const renderHeader = (isDesktop) => (
     <div className='header'>
-        <span>Sapientia informatika felkészítő kvíz!</span>
+        <span>Informatika kvíz!</span>
     </div>
 );
 
